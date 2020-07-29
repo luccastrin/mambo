@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+/************
+*** VARIABLES ***
+*/
+$bg-grey: #454545;
+$box-shadow-grey: #d5d5d5;
+$lighter-grey: #9c9c9c;
+
+$red: #f44237;
+
+$green: #549305;
+$green-darker: #3b6626;
+
+$white: #fff;
+
+/************
+*** GENERAL ***
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+	font-family: "Open Sans", sans-serif;
+}
+
+.container {
+	width: 1180px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1;
+}
+
+::-moz-placeholder {
+	color: inherit;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: inherit;
+}
+::-webkit-input-placeholder {
+	color: inherit;
+}
+
+/************
+*** MIXINS ***
+*/
+@mixin input() {
+	width: 100%;
+	height: 55px;
+	border: 1px solid #d5d5d5;
+	border-radius: 30px;
+	padding-left: 20px;
+	color: $lighter-grey;
+}
+
+@mixin link() {
+	width: 100%;
+	display: inline-block;
+	background-color: $red;
+	color: $white;
+	border-radius: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 10px 0;
+}
