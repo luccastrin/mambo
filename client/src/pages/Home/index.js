@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {Carousel} from "react-responsive-carousel";
+import Slider from "react-slick";
 
 import carouselImage from "../../assets/carousel-image.png";
 import imageSection from "../../assets/image-section.png";
@@ -27,26 +26,41 @@ function Index() {
 		setIsModalVisible(false);
 	}
 
+	const settingsHome = {
+		dots: false,
+		infinite: true,
+		arrows: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	};
+
+	const settingsProducts = {
+		dots: false,
+		infinite: false,
+		arrows: true,
+		speed: 500,
+		slidesToShow: 5,
+		slidesToScroll: 1,
+	};
+
 	return (
 		<>
 			<Header onOpen={handleModalOpen} />
 
 			<section id="carousel-section">
 				<div className="container">
-					<Carousel>
+					<Slider {...settingsHome}>
 						<div>
 							<img src={carouselImage} alt="Imagem do carousel" />
-							<p className="legend">Legend 1</p>
 						</div>
 						<div>
 							<img src={carouselImage} alt="Imagem do carousel" />
-							<p className="legend">Legend 2</p>
 						</div>
 						<div>
 							<img src={carouselImage} alt="Imagem do carousel" />
-							<p className="legend">Legend 3</p>
 						</div>
-					</Carousel>
+					</Slider>
 				</div>
 			</section>
 
@@ -68,7 +82,7 @@ function Index() {
 
 			<section id="carousel-api">
 				<div className="container">
-					<div className="slider">
+					<Slider {...settingsProducts} className="slider">
 						<div className="carousel-content">
 							<img
 								className="product-image"
@@ -154,7 +168,24 @@ function Index() {
 								<Link to="/detalhes">Visualizar</Link>
 							</div>
 						</div>
-					</div>
+						<div className="carousel-content">
+							<img
+								className="product-image"
+								src={carneImg}
+								alt="Imagem do produto"
+							/>
+							<div className="alignment">
+								<h2>Bovino in natura</h2>
+								<h1>
+									Carne Moída de Patinho Bovina Resfriada
+									Bandeja
+								</h1>
+								<img src={starts} alt="estrelas" />
+								<h3>R$16,75</h3>
+								<Link to="/detalhes">Visualizar</Link>
+							</div>
+						</div>
+					</Slider>
 				</div>
 			</section>
 
